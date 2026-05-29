@@ -67,5 +67,8 @@ jobs:
         with:
           package-name: ${{ env.IMAGE_NAME }}
           package-type: container
-          min-versions-to-keep: 0
+          # Multi-arch images store each platform manifest as an untagged version.
+          # Keep ≥ 5 so the current build's amd64 + arm64 manifests are never deleted
+          # (the tagged "latest" index references them and breaks if they are removed).
+          min-versions-to-keep: 5
           delete-only-untagged-versions: true
