@@ -1,5 +1,5 @@
 # https://hub.docker.com/r/apache/airflow
-FROM apache/airflow:3.2.2-python3.14
+FROM apache/airflow:3.2.2-python3.13
 
 # Versions can be overridden at build time.
 # https://pypi.org/project/apache-airflow-providers-trino/
